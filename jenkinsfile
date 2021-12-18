@@ -13,7 +13,7 @@ properties([pipelineTriggers([pollSCM('* * * * *')])])
  {
  sh "${mavenHome}/bin/mvn clean package"
  }
- 
+ /*
  stage('SonarQubeReport')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -30,7 +30,7 @@ properties([pipelineTriggers([pollSCM('* * * * *')])])
  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.19.57.234:/home/ec2-user/apache-tomcat-9.0.56/webapps/"
  }
  }
- 
+ */
  stage('notification')
  {
  mail bcc: 'raghumaligera68@gmail.com', body: '''Build over..
